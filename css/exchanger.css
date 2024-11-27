@@ -64,6 +64,12 @@ section img{
     max-width: 80%;
     margin: 0 auto;
     padding: 10px;
+    background-color: var(--ligth-grey);
+    border-radius: 10px;
+}
+.calculator h2{
+    margin: 20px 0;
+    font-size: 2rem;
 }
 .calculator-main{
     display: grid;
@@ -80,10 +86,19 @@ section img{
     grid-column: 6/7;
 }
 .calculator-main .column:nth-child(4){
-    grid-column: 8/10;
+    grid-column: 7/10;
 }
 .calculator-main .column:nth-child(5){
     grid-column: 10/12;
+}
+.calculator-main select{
+    padding: 10px 50px;
+}
+.calculator-main input{
+    padding: 10px 30px;
+}
+.border-orange{
+    border: var(--orange) 1px solid;
 }
 .calculator-main i{
     background-color: var(--orange);
