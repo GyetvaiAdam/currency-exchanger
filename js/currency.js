@@ -1,13 +1,7 @@
 const apiKey = 'd18cd56d330726aee31bf6db5dca5898';
 const apiUrl = `http://data.fixer.io/api/latest?access_key=${apiKey}`;
 
-//exchangable currencies
-const currencies = [
-    'HUF', 'EUR', 'USD', 'CHF', 'GBP', 'CZK', 
-    'JPY', 'SEK', 'AUD', 'NOK', 'CAD', 'RON', 
-    'PLN', 'RSD'
-];
-
+// Alapértelmezett adatok (ha az API nem elérhető)
 let data = {
     HUF: 410.28409,
     EUR: 1,
@@ -25,23 +19,24 @@ let data = {
     RSD: 116.997561
 };
 
-// fetch if button pressed
+// API-hívás gombnyomásra
 async function fetchExchangeRates() {
     try {
         const response = await fetch(apiUrl);
         const result = await response.json();
 
         if (result.success) {
-            const exchangeRates = result.rates;
-            // update fetched dataes
-            data = currenciesToDisplay.reduce((filtered, currency) => {
-                if (exchangeRates[currency] !== undefined) {
-                    filtered[currency] = exchangeRates[currency];
-                }
-                return filtered;
-            }, {});
+            // Szűrjük az adatokat csak a szükséges valutákra
+            const exchangeRates = Object.keys(result.rates)
+                .filter((key) => currencies.includes(key))
+                .reduce((obj, key) => {
+                    obj[key] = result.rates[key];
+                    return obj;
+                }, {});
 
-            updateExchangeRatesUI(data);
+            // Frissítjük a data objektumot
+            data = exchangeRates;
+            updateExchangeTable(data);
         } else {
             console.error('Failed to fetch exchange rates:', result.error);
         }
@@ -50,18 +45,25 @@ async function fetchExchangeRates() {
     }
 }
 
-// function for currencie show
-function updateExchangeRatesUI(data) {
-    const exchangeRatesDiv = document.getElementById('exchangeRates');
-    exchangeRatesDiv.innerHTML = '<h2>Exchange Rates:</h2><ul>';
+// Táblázat frissítése az aktuális adatokkal
+function updateExchangeTable(data) {
+    const tableBody = document.querySelector("#exchangeTable tbody");
+    tableBody.innerHTML = ""; // Töröljük a meglévő tartalmat
+
+    // Adatok hozzáadása
     for (const [currency, rate] of Object.entries(data)) {
-        exchangeRatesDiv.innerHTML += `<li>${currency}: ${rate.toFixed(4)}</li>`;
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${currency}</td>
+            <td>${currency}</td>
+            <td>${rate.toFixed(4)}</td>
+        `;
+        tableBody.appendChild(row);
     }
-    exchangeRatesDiv.innerHTML += '</ul>';
 }
 
-//start fetch
+// Gomb esemény
 document.getElementById('refreshButton').addEventListener('click', fetchExchangeRates);
 
-//newest data show
-updateExchangeRatesUI(data);
+// Alapértelmezett adatok megjelenítése induláskor
+updateExchangeTable(data);

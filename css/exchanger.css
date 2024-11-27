@@ -120,3 +120,21 @@ section img{
     color: var(--orange);
 }
 img{width: 100%;}
+
+/*érfolyamok megjelenitése*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #f4f4f4;
+}
+.chart {
+    color: red;
+}
