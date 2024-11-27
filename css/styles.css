@@ -3,7 +3,16 @@
     padding:0;
     box-sizing: border-box;
   }
-  
+  :root{
+    --black: #000814;
+    --dark-blue: #001D3D;
+    --ligth-blue:#003566;
+    --orange: #FFC300;
+    --yellow: #FFD60A;
+    --ligth-grey:#f0e7e7;
+    --dark-grey: #948f8f;
+}
+
   html{
     background-color:#fff;
     color:#555;
