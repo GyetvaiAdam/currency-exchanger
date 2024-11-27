@@ -5,7 +5,7 @@
     --orange: #FFC300;
     --yellow: #FFD60A;
     --ligth-grey:#f0e7e7;
-    --dark-grey: #9c9797;
+    --dark-grey: #948f8f;
 }
 *{box-sizing: border-box; margin: 0; padding: 0;}
 .container{
@@ -32,6 +32,15 @@ section{
     justify-content: center;
     align-items: center;
 }
+section .row{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section h2,p{
+    color: var(--dark-grey);
+}
 .yellow{
     color: var(--yellow);
 }
+img{width: 100%;}
