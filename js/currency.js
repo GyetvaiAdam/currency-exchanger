@@ -77,16 +77,13 @@ function updateExchangeTable(data, currencyNames) {
 
     // Adatok hozzáadása
     for (const [currency, rate] of Object.entries(data)) {
-        let rateInHUF;
-        rateInHUF = Math.round((data.HUF/rate))
-
-
+        let rateInHUF = (data.HUF/rate).toFixed(2)
         const name = currencyNames[currency] || "Ismeretlen valuta"; // Ha nincs név, alapértelmezett szöveg
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${name}</td>
             <td>${currency}</td>
-            <td>${rateInHUF}</td>
+            <td>1 ${currency} = ${rateInHUF} Ft</td>
         `;
         tableBody.appendChild(row);
     }
