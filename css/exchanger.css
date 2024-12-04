@@ -17,7 +17,7 @@
     margin-bottom: 1rem;
 }
 .container h1{
-    font-size: 2.5rem;
+    font-size: 2.8rem;
 }
 .container h4{
     font-size: 1.4rem;
@@ -63,9 +63,10 @@ section img{
 .calculator{
     max-width: 80%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 14px;
     background-color: var(--ligth-grey);
     border-radius: 10px;
+    height: 200px;
 }
 .calculator h2{
     margin: 20px 0;
@@ -115,9 +116,51 @@ section img{
     font-size: 1rem;
     cursor: pointer;   
 }
-
+/*figyelmeztető!*/
+.notice{
+    max-width: 80%;
+    margin: 0 auto;
+}
+.notice p{
+    font-size: 12px;
+    padding: 10px;
+}
+/*horizontal line*/
+hr{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+/*általános-infó*/
+.general-information{
+    max-width: 80%;
+    margin: 0 auto;
+}
+.general-information h1{
+    padding: 10px 0;
+}
+.general-information p{
+    font-size: 18px;
+}
+.general-information p:first-of-type{
+    padding-bottom: 1rem;
+}
+.general-information p:nth-of-type(2){
+    padding-bottom: 4px;
+}
+/*conditions*/
+.conditions{
+    max-width: 80%;
+    margin: 0 auto;
+}
+.conditions ul{
+    list-style-type: "➝";
+}
+.conditions ul li{
+    gap: 2rem;
+}
 .orange{
-    color: var(--orange);
+    color:#FFC300;
 }
 img{width: 100%;}
 
@@ -138,3 +181,68 @@ th {
 .chart {
     color: red;
 }
+/*footer*/
+footer {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid #ccc; /* Vízszintes felső szegély */
+    border-bottom: 1px solid #ccc; /* Vízszintes alsó szegély */
+    padding: 10px;
+  }
+  
+  .footer-column {
+    flex: 1;
+    padding: 0 10px;
+    border-left: 1px solid #ccc; 
+  }
+  
+  .footer-column:first-child {
+    border-left: none; /* Az első oszlop bal szegélye nincs */
+  }
+
+  .footer-column ul:first-child{
+    margin-right: 200px;
+  }
+  
+  .footer-column h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-column p,
+  .footer-column ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px; 
+  }
+  
+  .footer-links ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-column a {
+    text-decoration: none;
+    color: #007BFF;
+  }
+  
+  .footer-column a:hover {
+    text-decoration: underline;
+  }
+  
