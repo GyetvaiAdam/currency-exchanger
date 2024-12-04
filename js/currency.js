@@ -77,21 +77,11 @@ function updateExchangeTable(data, currencyNames) {
 
     // Adatok hozzáadása
     for (const [currency, rate] of Object.entries(data)) {
-        if (currency === "HUF") {
-            // HUF esetén az érték mindig 1
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${currencyNames[currency]}</td>
-                <td>${currency}</td>
-                <td>1</td>
-            `;
-            tableBody.appendChild(row);
-            continue;
-        }
+        let rateInHUF;
+        rateInHUF = Math.round((data.HUF/rate))
+
 
         const name = currencyNames[currency] || "Ismeretlen valuta"; // Ha nincs név, alapértelmezett szöveg
-        const rateInHUF = Math.round(rate * hufRate); // Árfolyam HUF-ban, helyesen kiszámolva
-
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${name}</td>
@@ -101,6 +91,9 @@ function updateExchangeTable(data, currencyNames) {
         tableBody.appendChild(row);
     }
 }
+
+
+
 
 
 
