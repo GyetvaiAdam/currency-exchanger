@@ -1,6 +1,25 @@
 const apiKey = 'd18cd56d330726aee31bf6db5dca5898';
 const apiUrl = `http://data.fixer.io/api/latest?access_key=${apiKey}`;
 
+//árfolyamok teljes nevének listája
+const currencyNames = {
+    HUF: "Magyar Forint",
+    EUR: "Euró",
+    USD: "Amerikai Dollár",
+    CHF: "Svájci Frank",
+    GBP: "Brit Font",
+    CZK: "Cseh Korona",
+    JPY: "Japán Jen",
+    SEK: "Svéd Korona",
+    AUD: "Ausztrál Dollár",
+    NOK: "Norvég Korona",
+    CAD: "Kanadai Dollár",
+    RON: "Román Lej",
+    PLN: "Lengyel Zloty",
+    RSD: "Szerb Dínár"
+};
+
+
 // Alapértelmezett adatok (ha az API nem elérhető)
 let data = {
     HUF: 410.28409,
@@ -45,25 +64,43 @@ async function fetchExchangeRates() {
     }
 }
 
-// Táblázat frissítése az aktuális adatokkal
-function updateExchangeTable(data) {
+function updateExchangeTable(data, currencyNames) {
     const tableBody = document.querySelector("#exchangeTable tbody");
     tableBody.innerHTML = ""; // Töröljük a meglévő tartalmat
 
+    const hufRate = data.HUF; // HUF árfolyam
+
+    if (!hufRate) {
+        console.error("Nem található HUF árfolyam az adatokban.");
+        return;
+    }
+
     // Adatok hozzáadása
     for (const [currency, rate] of Object.entries(data)) {
+        let rateInHUF;
+        rateInHUF = Math.round((data.HUF/rate))
+
+
+        const name = currencyNames[currency] || "Ismeretlen valuta"; // Ha nincs név, alapértelmezett szöveg
         const row = document.createElement("tr");
         row.innerHTML = `
+            <td>${name}</td>
             <td>${currency}</td>
-            <td>${currency}</td>
-            <td>${rate.toFixed(4)}</td>
+            <td>${rateInHUF}</td>
         `;
         tableBody.appendChild(row);
     }
 }
 
+
+
+
+
+
+
+
 // Gomb esemény
 document.getElementById('refreshButton').addEventListener('click', fetchExchangeRates);
 
 // Alapértelmezett adatok megjelenítése induláskor
-updateExchangeTable(data);
+updateExchangeTable(data, currencyNames);

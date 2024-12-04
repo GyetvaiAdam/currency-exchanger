@@ -65,18 +65,18 @@
   }
   
   .btn:hover,.btn:active{
-    background-color:#e74c3c;
+    background-color:var(--ligth-grey);
     color: black;
-    border: 2px solid #e74c3c;
+    border: 2px solid  var(--ligth-grey);
     transition:background-color .3s;
   }
   
   .btn-full:link,.btn:visited{
-    background-color:#e74c3c;
+    background-color:var(--dark-grey);
   }
   
   .btn-ghost:link,.btn:visited{
-    border: 2px solid #e74c3c;
+    border: 2px solid var(--dark-grey);
   }
   
   
@@ -112,7 +112,7 @@
   }
   
   .main-nav li a:hover, .main-nav li a:active{
-    border-bottom: 2px solid #e74c3c;
+    border-bottom: 2px solid var(--ligth-grey);
     
   }
   
