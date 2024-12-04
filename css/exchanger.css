@@ -122,7 +122,7 @@ section img{
     margin: 0 auto;
 }
 .notice p{
-    font-size: 12px;
+    font-size: 14px;
     padding: 10px;
 }
 /*horizontal line*/
@@ -185,7 +185,6 @@ th {
 footer {
     padding: 20px;
     font-family: Arial, sans-serif;
-    border-bottom: 2px solid #ccc;
   }
   
   .footer-container {
@@ -237,7 +236,7 @@ footer {
     margin-bottom: 5px;
   }
   
-  .footer-column a {
+  .footer-column:first-child a {
     text-decoration: none;
     color: #007BFF;
   }
@@ -245,4 +244,9 @@ footer {
   .footer-column a:hover {
     text-decoration: underline;
   }
+/*jogok*/
+.rigths p{
+    text-align: center;
+    padding: 10px;
+}
   
