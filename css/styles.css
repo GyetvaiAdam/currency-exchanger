@@ -78,27 +78,41 @@
   .btn-ghost:link,.btn:visited{
     border: 2px solid var(--dark-grey);
   }
-  
-  
-  .logo{
-    height: 105px;
-    width:auto;
-    float:left;
-    margin-top:20px;
-  }
-  
-  
-  .main-nav{
-    float:right;
-    list-style:none;
-    margin-top:55px;
-  }
-  
-  .main-nav li{
-    display: inline-block;
-    margin-left:40px;
-  }
-  
+
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    margin-left: 90px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-container img {
+    height: 185px;
+    object-fit: contain;
+    margin: 0;
+}
+
   .main-nav li a:link, .main-nav li a:visited{
     color: #fff;
     text-decoration:none;
