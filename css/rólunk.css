@@ -121,6 +121,56 @@ footer p {
     font-size: 1rem;
 }
 
+.contact {
+    padding: 2rem 1rem;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    margin: 2rem auto;
+    max-width: 700px;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    color: var(--dark-blue);
+    margin-bottom: 1rem;
+}
+
+.contact p {
+    font-size: 1rem;
+    color: var(--dark-grey);
+    line-height: 1.4;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contact input, .contact textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.contact button {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--orange);
+    color: var(--black);
+    border-radius: 8px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: var(--yellow);
+}
+
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
