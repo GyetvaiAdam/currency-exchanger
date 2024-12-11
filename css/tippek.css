@@ -29,7 +29,6 @@ header {
     border-bottom-right-radius: 20px;
 }
 
-
 header h1 {
     font-size: 2.8rem;
     font-weight: 700;
@@ -51,7 +50,6 @@ header p {
     line-height: 1.6;
     font-weight: 400;
 }
-
 
 section {
     margin-bottom: 2rem;
@@ -77,7 +75,6 @@ section {
     transform: translateY(-4px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
-
 
 .about {
     background-color: white;
@@ -230,17 +227,22 @@ footer p {
     text-align: center;
 }
 
+.container img {
+    height: 185px;
+    display: block; 
+    margin: 0 auto; 
+}
+
 .card-wrapper {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column; 
     gap: 1rem;
     margin-top: 1.5rem;
 }
 
 .tip-card,
 .service-card {
-    flex: 1 1 calc(30% - 1rem);
+    flex: 1 1 100%; 
     background-color: white;
     padding: 1.5rem;
     border-radius: 10px;
@@ -253,6 +255,7 @@ footer p {
     transform: translateY(-8px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
+
 
 .tip-card h3,
 .service-card h3 {
@@ -285,7 +288,7 @@ footer p {
     background-color: var(--light-blue);
 }
 
-h2,h1,h3,p {
+h2, h1, h3, p {
     animation: fadeInUp 1s ease-out;
 }
 
@@ -300,6 +303,7 @@ h2,h1,h3,p {
         flex: 1 1 100%;
     }
 }
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
