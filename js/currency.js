@@ -1,7 +1,7 @@
+// async kérés
 const apiKey = 'd18cd56d330726aee31bf6db5dca5898';
-const apiUrl = `http://data.fixer.io/api/latest?access_key=${apiKey}`;
+const apiUrl = `https://data.fixer.io/api/latest?access_key=${apiKey}`;
 
-//árfolyamok teljes nevének listája
 const currencyNames = {
     HUF: "Magyar Forint",
     EUR: "Euró",
@@ -19,8 +19,8 @@ const currencyNames = {
     RSD: "Szerb Dínár"
 };
 
+const currencies = Object.keys(currencyNames);
 
-// Alapértelmezett adatok (ha az API nem elérhető)
 let data = {
     HUF: 410.28409,
     EUR: 1,
@@ -38,14 +38,13 @@ let data = {
     RSD: 116.997561
 };
 
-// API-hívás gombnyomásra
 async function fetchExchangeRates() {
     try {
+        console.log('Fetching exchange rates...');
         const response = await fetch(apiUrl);
         const result = await response.json();
 
         if (result.success) {
-            // Szűrjük az adatokat csak a szükséges valutákra
             const exchangeRates = Object.keys(result.rates)
                 .filter((key) => currencies.includes(key))
                 .reduce((obj, key) => {
@@ -53,9 +52,9 @@ async function fetchExchangeRates() {
                     return obj;
                 }, {});
 
-            // Frissítjük a data objektumot
             data = exchangeRates;
-            updateExchangeTable(data);
+            console.log('Updated data:', data);
+            updateExchangeTable(data, currencyNames);
         } else {
             console.error('Failed to fetch exchange rates:', result.error);
         }
@@ -63,17 +62,16 @@ async function fetchExchangeRates() {
         console.error('An error occurred while fetching exchange rates:', error);
     }
 }
-
+// táblázat frissítése
 function updateExchangeTable(data, currencyNames) {
     const tableBody = document.querySelector("#exchangeTable tbody");
     tableBody.innerHTML = "";
 
-    const hufRate = data.HUF; // HUF árfolyam
+    const hufRate = data.HUF;
 
-    // Adatok hozzáadása
     for (const [currency, rate] of Object.entries(data)) {
-        let rateInHUF = (data.HUF/rate).toFixed(2)
-        const name = currencyNames[currency] || "Ismeretlen valuta"; // Ha nincs név, alapértelmezett szöveg
+        let rateInHUF = (hufRate / rate).toFixed(2);
+        const name = currencyNames[currency] || "Ismeretlen valuta";
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${name}</td>
@@ -83,16 +81,25 @@ function updateExchangeTable(data, currencyNames) {
         tableBody.appendChild(row);
     }
 }
-
-
-
-
-
-
-
-
-// Gomb esemény
+//gomb nyomásra eseményfigyelő => árfolyam frissítés
 document.getElementById('refreshButton').addEventListener('click', fetchExchangeRates);
-
-// Alapértelmezett adatok megjelenítése induláskor
 updateExchangeTable(data, currencyNames);
+
+//sötét téma
+document.querySelector(".container img").addEventListener("click", (e)=>{
+    const source = e.target.src.split("/").at(-1)
+    if(source === `dark.png`){
+        e.target.src = `./img/theme/light.png`
+        document.querySelector(".container").style.backgroundColor = "var(--dark)"
+        document.querySelector(".calculator").style.backgroundColor = "var(--dark)"
+        document.querySelector("body").style.backgroundColor = "var(--lighterdark)"
+        document.querySelector("p").style.color = "var(--ligth-grey)"
+
+    }else{
+        e.target.src=`./img/theme/dark.png`
+        document.querySelector(".container").style.backgroundColor = ""
+        document.querySelector(".calculator").style.backgroundColor = ""
+        document.querySelector("body").style.backgroundColor = ""
+    }
+})
+
