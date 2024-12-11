@@ -32,25 +32,25 @@
         <div class="calculator-main">
             <div class="column">
                 <p>Átváltandó összeg</p>
-                <input type="number">
+                <input type="number" id="amount">
             </div>
             <div class="column ">
                 <p>Erről a valutáról</p>
-                <select name="" id="" class="border-orange">
-                    <option value="" selected>HUF</option>
-                    <option value="">EUR</option>
-                    <option value="">USD</option>
-                    <option value="">CHF</option>
-                    <option value="">GBP</option>
-                    <option value="">CZK</option>
-                    <option value="">JPY</option>
-                    <option value="">SEK</option>
-                    <option value="">AUD</option>
-                    <option value="">NOK</option>
-                    <option value="">CAD</option>
-                    <option value="">RON</option>
-                    <option value="">PLN</option>
-                    <option value="">RSD</option>
+                <select name="" id="from-currency" class="border-orange">
+                    <option value="HUF" selected>HUF</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="GBP">GBP</option>
+                    <option value="CZK">CZK</option>
+                    <option value="JPY">JPY</option>
+                    <option value="SEK">SEK</option>
+                    <option value="AUD">AUD</option>
+                    <option value="NOK">NOK</option>
+                    <option value="CAD">CAD</option>
+                    <option value="RON">RON</option>
+                    <option value="PLN">PLN</option>
+                    <option value="RSD">RSD</option>
                 </select>
             </div>
             <div class="column">
@@ -58,28 +58,28 @@
             </div>
             <div class="column">
                 <p>Erre a valutára</p>
-                <select name="" id="" class="border-orange">
-                    <option value="">HUF</option>
-                    <option value="" selected>EUR</option>
-                    <option value="">USD</option>
-                    <option value="">CHF</option>
-                    <option value="">GBP</option>
-                    <option value="">CZK</option>
-                    <option value="">JPY</option>
-                    <option value="">SEK</option>
-                    <option value="">AUD</option>
-                    <option value="">NOK</option>
-                    <option value="">CAD</option>
-                    <option value="">RON</option>
-                    <option value="">PLN</option>
-                    <option value="">RSD</option>
+                <select name="" id="to-currency" class="border-orange">
+                    <option value="HUF">HUF</option>
+                    <option value="EUR" selected>EUR</option>
+                    <option value="USD">USD</option>
+                    <option value="CHF">CHF</option>
+                    <option value="GBP">GBP</option>
+                    <option value="CZK">CZK</option>
+                    <option value="JPY">JPY</option>
+                    <option value="SEK">SEK</option>
+                    <option value="AUD">AUD</option>
+                    <option value="NOK">NOK</option>
+                    <option value="CAD">CAD</option>
+                    <option value="RON">RON</option>
+                    <option value="PLN">PLN</option>
+                    <option value="RSD">RSD</option>
                 </select>
             </div>
             <div class="column">
-                <button type="button">Átváltom az összeget!</button>
+                <button type="button" id="convert-button">Átváltom az összeget!</button>
             </div>
-            <div class="column">
-                <p>kuki = fasz</p>
+            <div class="popup column" id="popup" style="display: none;">
+                <div id="popup-content"></div>
             </div>
         </div>
     </div>
@@ -115,9 +115,9 @@
     <div class="conditions">
         <h1>Árfolyam kedvezmények és valutaváltási feltételek</h1>
         <ul>
-            <li> Az egyes váltóhelyek árfolyamairól, kezelési költségéről és nyitvatartási idejéről a <span class="orange">valutaváltóink adatlapjairól</span> tájékozódhat.</li>
-            <li> <span class="orange">Egyedi árfolyam</span> igényelhető személyesen, a váltás során 500.000 Ft-ot meghaladó összeg esetén.</li>
-            <li> 10.000.000 forintnak megfelelő, vagy azt meghaladó összeg váltása esetén szükséges a pénzforrást igazoló dokumentum és az MBH Bank engedélye a jogszabályi előírások szerint. Kérjük, <br> ezzel kapcsolatban legyenek szívesek előzetesen a 06 70 450 6969 számon érdeklődni!</li>
+            <li>➝ Az egyes váltóhelyek árfolyamairól, kezelési költségéről és nyitvatartási idejéről a <span class="orange">valutaváltóink adatlapjairól</span> tájékozódhat.</li>
+            <li>➝ <span class="orange">Egyedi árfolyam</span> igényelhető személyesen, a váltás során 500.000 Ft-ot meghaladó összeg esetén.</li>
+            <li>➝ 10.000.000 forintnak megfelelő, vagy azt meghaladó összeg váltása esetén szükséges a pénzforrást igazoló dokumentum és az MBH Bank engedélye a jogszabályi előírások szerint. Kérjük, <br> ezzel kapcsolatban legyenek szívesek előzetesen a 06 70 450 6969 számon érdeklődni!</li>
         </ul>
     </div>
     <footer>

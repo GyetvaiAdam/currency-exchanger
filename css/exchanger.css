@@ -105,8 +105,11 @@ section img{
     border-radius: 10px;
     box-sizing: border-box;
     font-size: 2rem;
+    margin-top: 14px;
 }
-
+.calculator-main .column:nth-child(6) p{
+    color: #fff;
+}
 .calculator-main select{
     padding: 10px 50px;
 }
@@ -169,7 +172,7 @@ hr{
     margin: 0 auto;
 }
 .conditions ul{
-    list-style-type: "➝";
+    list-style-type: none;
 }
 .conditions ul li{
     margin-bottom: 10px;
@@ -190,7 +193,9 @@ img{width: 100%;}
     background-color: #FFC300;
     border-radius:5px;
 }
-
+#popup-content{
+    margin: 0 auto;
+}
 table {
     width: 100%;
     border-collapse: collapse;
