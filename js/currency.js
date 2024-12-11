@@ -88,14 +88,32 @@ document.getElementById('refreshButton').addEventListener('click', fetchExchange
 
 updateExchangeTable(exchangeRates);
 
-// Convert gomb eseménykezelése
+
+// Gomb eseménykezelő a valuták cseréléséhez
+document.getElementById("change-currency-values").addEventListener("click", function() {
+    const fromCurrencySelect = document.getElementById("from-currency");
+    const toCurrencySelect = document.getElementById("to-currency");
+
+    const tempValue = fromCurrencySelect.value;
+    fromCurrencySelect.value = toCurrencySelect.value;
+    toCurrencySelect.value = tempValue;
+
+    const fromLabel = document.querySelector('label[for="from-currency"]');
+    const toLabel = document.querySelector('label[for="to-currency"]');
+    
+    if (fromLabel && toLabel) {
+        const tempText = fromLabel.textContent;
+        fromLabel.textContent = toLabel.textContent;
+        toLabel.textContent = tempText;
+    }
+});
+
 // Átváltás gomb eseménykezelő
 document.getElementById("convert-button").addEventListener("click", function() {
     const amount = parseFloat(document.getElementById("amount").value);
-    const fromCurrency = document.getElementById("from-currency").value; // Kiválasztott valuta
-    const toCurrency = document.getElementById("to-currency").value; // Kiválasztott cél valuta
+    const fromCurrency = document.getElementById("from-currency").value;
+    const toCurrency = document.getElementById("to-currency").value;
 
-    // Ellenőrizzük, hogy az összeg érvényes szám
     if (isNaN(amount) || amount <= 0) {
         alert("Kérjük, adjon meg egy érvényes összeget!");
         return;
