@@ -164,7 +164,18 @@ hr{
 }
 img{width: 100%;}
 
-/*érfolyamok megjelenitése*/
+/*árfolyamok megjelenitése*/
+#refreshButton{
+    float: right;
+    margin: 0 2rem 2rem 0;
+    width: 10rem;
+    height: 2rem;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #FFC300;
+    border-radius:5px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;

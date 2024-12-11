@@ -66,14 +66,9 @@ async function fetchExchangeRates() {
 
 function updateExchangeTable(data, currencyNames) {
     const tableBody = document.querySelector("#exchangeTable tbody");
-    tableBody.innerHTML = ""; // Töröljük a meglévő tartalmat
+    tableBody.innerHTML = "";
 
     const hufRate = data.HUF; // HUF árfolyam
-
-    if (!hufRate) {
-        console.error("Nem található HUF árfolyam az adatokban.");
-        return;
-    }
 
     // Adatok hozzáadása
     for (const [currency, rate] of Object.entries(data)) {
