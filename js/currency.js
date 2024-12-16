@@ -96,7 +96,10 @@ document.querySelector(".container img").addEventListener("click", (e) => {
         document.querySelector(".container").style.backgroundColor = "var(--dark)";
         document.querySelector(".calculator").style.backgroundColor = "var(--dark)";
         document.querySelector("body").style.backgroundColor = "var(--lighterdark)";
-        document.querySelector("p").style.color = "var(--ligth-grey)";
+        document.querySelector("p").style.color = "black";
+        document.querySelector("h2").style.color = "black";
+        document.querySelector(".general-information p").style.color = "black";
+        document.querySelector("p").style.color = "black";
     } else {
         e.target.src = './img/theme/dark.png';
         document.querySelector(".container").style.backgroundColor = "";
