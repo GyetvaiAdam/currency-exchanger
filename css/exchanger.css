@@ -60,6 +60,7 @@ section h2,p{
 section img{
     border-radius: 10px;
 }
+/*maga az átváltó*/
 .calculator {
     max-width: 80%;
     margin: 0 auto;
@@ -222,8 +223,8 @@ footer {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    border-top: 1px solid #ccc; /* Vízszintes felső szegély */
-    border-bottom: 1px solid #ccc; /* Vízszintes alsó szegély */
+    border-top: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc; 
     padding: 10px;
   }
   
@@ -234,7 +235,7 @@ footer {
   }
   
   .footer-column:first-child {
-    border-left: none; /* Az első oszlop bal szegélye nincs */
+    border-left: none;
   }
 
   .footer-column ul:first-child{
@@ -280,4 +281,22 @@ footer {
     text-align: center;
     padding: 10px;
 }
-  
+@media(max-width: 1300px){
+    #refreshButton{
+        margin: 0 0.4rem 2rem 0;
+    }
+    section .column:nth-child(2){
+        grid-column: 1/6;
+    }
+    section .column:nth-child(1){
+        grid-column: 1/6;
+    }
+}
+@media(max-width: 984px){
+    .footer-links {
+        gap: 10px;
+      }
+      .footer-container {
+        display: flex;
+        justify-content: space-around;}
+}
