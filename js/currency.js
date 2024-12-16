@@ -1,3 +1,5 @@
+
+
 // async kérés
 const apiKey = 'd18cd56d330726aee31bf6db5dca5898';
 const apiUrl = `https://data.fixer.io/api/latest?access_key=${apiKey}`;
@@ -93,20 +95,32 @@ document.querySelector(".container img").addEventListener("click", (e) => {
     const source = e.target.src.split("/").at(-1);
     if (source === 'dark.png') {
         e.target.src = './img/theme/light.png';
-        document.querySelector(".container").style.backgroundColor = "var(--dark)";
-        document.querySelector(".calculator").style.backgroundColor = "var(--dark)";
+        document.querySelector(".container").style.backgroundColor = "var(--dark2)";
+        document.querySelector(".calculator").style.backgroundColor = "var(--dark2)";
         document.querySelector("body").style.backgroundColor = "var(--lighterdark)";
-        document.querySelector("p").style.color = "black";
-        document.querySelector("h2").style.color = "black";
-        document.querySelector(".general-information p").style.color = "black";
-        document.querySelector("p").style.color = "black";
+        document.querySelector("thead").innerHTML=`
+        <tr>
+                <th style="background-color: #727171;">Devizanem</th>
+                <th style="background-color: #727171;">Kód</th>
+                <th style="background-color: #727171;">Árfolyam</th>
+        </tr>
+        `;
     } else {
         e.target.src = './img/theme/dark.png';
         document.querySelector(".container").style.backgroundColor = "";
         document.querySelector(".calculator").style.backgroundColor = "";
         document.querySelector("body").style.backgroundColor = "";
+        document.querySelector(".calculator-main p").style.Color = "";
+        document.querySelector("thead").innerHTML=`
+        <tr>
+                <th>Devizanem</th>
+                <th>Kód</th>
+                <th>Árfolyam</th>
+        </tr>
+        `
     }
 });
+
 
 // Gomb eseménykezelő a valuták cseréléséhez
 document.getElementById("change-currency-values").addEventListener("click", function() {

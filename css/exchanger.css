@@ -2,6 +2,7 @@
         --black: #000814;
         --dark-blue: #001D3D;
         --dark: #555556;
+        --dark2:#717172;
         --lighterdark: #919192;
         --ligth-blue:#003566;
         --orange: #FFC300;
@@ -25,9 +26,12 @@
         font-size: 1.4rem;
         color: var(--dark-grey);
     }
-    a{
+    .calculator-main p{
+        color: black;
+    }
+    a,p{
         text-decoration: none;
-        color: var(--dark-grey);
+        color: var(--dark);
     }
     section{
         max-width: 80%;
@@ -55,9 +59,6 @@
     }
     section p{
         font-size: 1.2rem;
-    }
-    section h2,p{
-        color: var(--dark-grey);
     }
     section img{
         border-radius: 10px;
@@ -171,7 +172,7 @@
         margin: 0 auto;
     }
     .conditions ul{
-        list-style-type: "➝";
+        list-style-type: "➝ ";
     }
     .conditions ul li{
         margin-bottom: 10px;
@@ -289,3 +290,4 @@
         background-color: var(--dark-grey);
         border-radius: 100%;
     }  
+
