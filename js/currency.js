@@ -24,7 +24,7 @@ const currencyNames = {
 
 const currencies = Object.keys(currencyNames);
 
-// Alapértelmezett adatok, ha az API nem elérhető
+// Alapértelmezett adatok, ha az API nincs frissitve
 let exchangeRates = {
     HUF: 410.28409,
     EUR: 1,
