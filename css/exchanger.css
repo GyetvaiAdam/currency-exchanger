@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root{
     --black: #000814;
     --dark-blue: #001D3D;
@@ -70,119 +71,120 @@ section img{
     box-sizing: border-box;
     background-color: var(--ligth-grey);
 }
+=======
+    :root{
+        --black: #000814;
+        --dark-blue: #001D3D;
+        --dark: #555556;
+        --lighterdark: #919192;
+        --ligth-blue:#003566;
+        --orange: #FFC300;
+        --yellow: #FFD60A;
+        --ligth-grey:#f1eeee;
+        --dark-grey: #948f8f;
+    }
+    *{box-sizing: border-box; margin: 0; padding: 0;}
+    .container{
+        background-color: var(--ligth-grey);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 200px;
+        margin-bottom: 1rem;
+    }
+    .container h1{
+        font-size: 2.8rem;
+    }
+    .container h4{
+        font-size: 1.4rem;
+        color: var(--dark-grey);
+    }
+    a{
+        text-decoration: none;
+        color: var(--dark-grey);
+    }
+    section{
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 10px;
+    }
+    section .row{
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 2rem;
+    }
+    section .column:first-child{
+        grid-column: 1/3;
+    }
+    section .column:nth-child(2){
+        grid-column: 3/6;
+    }
+    section h1{
+        font-size: 2.4rem;
+        margin-bottom: 10px;
+    }
+    section h2{
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    section p{
+        font-size: 1.2rem;
+    }
+    section h2,p{
+        color: var(--dark-grey);
+    }
+    section img{
+        border-radius: 10px;
+    }
+    .calculator {
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 14px;
+        border-radius: 10px;
+        height: auto; 
+        box-sizing: border-box;
+        background-color: var(--ligth-grey);
+    }
+>>>>>>> 7d1372e545e4029a0049aaf2bd550873c60d7485
 
-.calculator-main {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: min-content; 
-    gap: 10px; 
-}
-.calculator h2{
-    margin: 20px 0;
-    font-size: 2rem;
-}
-.calculator-main .column:first-child{
-    grid-column: 1/3;
-}
-.calculator-main .column:nth-child(2){
-    grid-column: 4/6;
-}
-.calculator-main .column:nth-child(3){
-    grid-column: 6/7;
-}
-.calculator-main .column:nth-child(4){
-    grid-column: 7/10;
-}
-.calculator-main .column:nth-child(5){
-    grid-column: 10/12;
-}
+    .calculator-main {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: min-content; 
+        gap: 10px; 
+    }
+    .calculator h2{
+        margin: 20px 0;
+        font-size: 2rem;
+    }
+    .calculator-main .column:first-child{
+        grid-column: 1/3;
+    }
+    .calculator-main .column:nth-child(2){
+        grid-column: 4/6;
+    }
+    .calculator-main .column:nth-child(3){
+        grid-column: 6/7;
+    }
+    .calculator-main .column:nth-child(4){
+        grid-column: 7/10;
+    }
+    .calculator-main .column:nth-child(5){
+        grid-column: 10/12;
+    }
 
-.calculator-main .column:nth-child(6) {
-    grid-row: 2/3;
-    grid-column: 1/13; 
-    background: linear-gradient(to right, var(--yellow), var(--orange));
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-sizing: border-box;
-    font-size: 2rem;
-    margin-top: 14px;
-}
-.calculator-main .column:nth-child(6) p{
-    color: #fff;
-}
-.calculator-main select{
-    padding: 10px 50px;
-}
-.calculator-main input{
-    padding: 10px 30px;
-}
-.border-orange{
-    border: var(--orange) 1px solid;
-}
-.calculator-main i{
-    background-color: var(--orange);
-    color: #fff;
-    padding: 14px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.calculator-main button{
-    background-color: var(--orange);
-    color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    font-size: 1rem;
-    cursor: pointer;   
-}
-/*figyelmeztető!*/
-.notice{
-    max-width: 80%;
-    margin: 0 auto;
-}
-.notice p{
-    font-size: 14px;
-    padding: 10px;
-}
-/*horizontal line*/
-hr{
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 2rem;
-}
-/*általános-infó*/
-.general-information{
-    max-width: 80%;
-    margin: 0 auto;
-}
-.general-information h1{
-    padding: 10px 0;
-}
-.general-information p{
-    font-size: 18px;
-}
-.general-information p:first-of-type{
-    padding-bottom: 1rem;
-}
-.general-information p:nth-of-type(2){
-    padding-bottom: 4px;
-}
-/*conditions*/
-.conditions{
-    max-width: 80%;
-    margin: 0 auto;
-}
-.conditions ul{
-    list-style-type: none;
-}
-.conditions ul li{
-    margin-bottom: 10px;
-}
-.orange{
-    color:#FFC300;
-}
-img{width: 100%;}
+    .calculator-main .column:nth-child(6) {
+        grid-row: 2/3;
+        grid-column: 1/13; 
+        background: linear-gradient(to right, var(--yellow), var(--orange));
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-size: 2rem;
+    }
 
+<<<<<<< HEAD
 /*árfolyamok megjelenitése*/
 #refreshButton{
     float: right;
@@ -300,3 +302,185 @@ footer {
         display: flex;
         justify-content: space-around;}
 }
+=======
+    .calculator-main select{
+        padding: 10px 50px;
+    }
+    .calculator-main input{
+        padding: 10px 30px;
+    }
+    .border-orange{
+        border: var(--orange) 1px solid;
+    }
+    .calculator-main i{
+        background-color: var(--orange);
+        color: #fff;
+        padding: 14px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .calculator-main button{
+        background-color: var(--orange);
+        color: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        font-size: 1rem;
+        cursor: pointer;   
+    }
+    /*figyelmeztető!*/
+    .notice{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .notice p{
+        font-size: 14px;
+        padding: 10px;
+    }
+    /*horizontal line*/
+    hr{
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 2rem;
+    }
+    /*általános-infó*/
+    .general-information{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .general-information h1{
+        padding: 10px 0;
+    }
+    .general-information p{
+        font-size: 18px;
+    }
+    .general-information p:first-of-type{
+        padding-bottom: 1rem;
+    }
+    .general-information p:nth-of-type(2){
+        padding-bottom: 4px;
+    }
+    /*conditions*/
+    .conditions{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .conditions ul{
+        list-style-type: "➝";
+    }
+    .conditions ul li{
+        margin-bottom: 10px;
+    }
+    .orange{
+        color:#FFC300;
+    }
+    img{width: 100%;}
+
+    /*árfolyamok megjelenitése*/
+    #refreshButton{
+        float: right;
+        margin: 0 2rem 2rem 0;
+        width: 10rem;
+        height: 2rem;
+        font-size: 15px;
+        cursor: pointer;
+        background-color: #FFC300;
+        border-radius:5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #f4f4f4;
+    }
+    .chart {
+        color: red;
+    }
+    /*footer*/
+    footer {
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+    
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        border-top: 1px solid #ccc; /* Vízszintes felső szegély */
+        border-bottom: 1px solid #ccc; /* Vízszintes alsó szegély */
+        padding: 10px;
+    }
+    
+    .footer-column {
+        flex: 1;
+        padding: 0 10px;
+        border-left: 1px solid #ccc; 
+    }
+    
+    .footer-column:first-child {
+        border-left: none; /* Az első oszlop bal szegélye nincs */
+    }
+
+    .footer-column ul:first-child{
+        margin-right: 200px;
+    }
+    
+    .footer-column h3 {
+        margin-bottom: 10px;
+    }
+    
+    .footer-column p,
+    .footer-column ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    .footer-links {
+        display: flex;
+        gap: 20px; 
+    }
+    
+    .footer-links ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    
+    .footer-links ul li {
+        margin-bottom: 5px;
+    }
+    
+    .footer-column:first-child a {
+        text-decoration: none;
+        color: #007BFF;
+    }
+    
+    .footer-column a:hover {
+        text-decoration: underline;
+    }
+    /*jogok*/
+    .rigths p{
+        text-align: center;
+        padding: 10px;
+    }
+    /*theme*/
+    .container img{
+        width: 2.3rem;
+        cursor: pointer;
+    }
+    .container button{
+        border: 0;
+        width: 2.7rem;
+        height: 2.7rem;
+        background-color: var(--dark-grey);
+        border-radius: 100%;
+    }  
+>>>>>>> 7d1372e545e4029a0049aaf2bd550873c60d7485

@@ -1,5 +1,6 @@
+// async kérés
 const apiKey = 'd18cd56d330726aee31bf6db5dca5898';
-const apiUrl = `http://data.fixer.io/api/latest?access_key=${apiKey}`;
+const apiUrl = `https://data.fixer.io/api/latest?access_key=${apiKey}`;
 
 // Árfolyamok teljes nevének listája
 const currencyNames = {
@@ -19,7 +20,9 @@ const currencyNames = {
     RSD: "Szerb Dínár"
 };
 
-// Alapértelmezett adatok (ha az API nem elérhető)
+const currencies = Object.keys(currencyNames);
+
+// Alapértelmezett adatok, ha az API nem elérhető
 let exchangeRates = {
     HUF: 410.28409,
     EUR: 1,
@@ -37,23 +40,23 @@ let exchangeRates = {
     RSD: 116.997561
 };
 
-// API-hívás gombnyomásra
+// async function az árfolyamok lekéréséhez
 async function fetchExchangeRates() {
     try {
+        console.log('Fetching exchange rates...');
         const response = await fetch(apiUrl);
         const result = await response.json();
 
         if (result.success) {
-            // Szűrjük az adatokat csak a szükséges valutákra
             exchangeRates = Object.keys(result.rates)
-                .filter((key) => key in currencyNames)
+                .filter((key) => currencies.includes(key))
                 .reduce((obj, key) => {
                     obj[key] = result.rates[key];
                     return obj;
                 }, {});
 
-            // Frissítjük a táblázatot az új árfolyamokkal
-            updateExchangeTable(exchangeRates);
+            console.log('Updated data:', exchangeRates);
+            updateExchangeTable(exchangeRates);  // Frissítjük a táblázatot
         } else {
             console.error('Failed to fetch exchange rates:', result.error);
         }
@@ -62,17 +65,16 @@ async function fetchExchangeRates() {
     }
 }
 
-// Árfolyam táblázat frissítése
-function updateExchangeTable(exchangeRates) {
+// Táblázat frissítése
+function updateExchangeTable(data) {
     const tableBody = document.querySelector("#exchangeTable tbody");
     tableBody.innerHTML = "";
 
-    const hufRate = exchangeRates.HUF; // HUF árfolyam
+    const hufRate = data.HUF;
 
-    // Adatok hozzáadása
-    for (const [currency, rate] of Object.entries(exchangeRates)) {
+    for (const [currency, rate] of Object.entries(data)) {
         let rateInHUF = (hufRate / rate).toFixed(2);
-        const name = currencyNames[currency] || "Ismeretlen valuta"; // Ha nincs név, alapértelmezett szöveg
+        const name = currencyNames[currency] || "Ismeretlen valuta";
         const row = document.createElement("tr");
         row.innerHTML = `
             <td>${name}</td>
@@ -83,11 +85,25 @@ function updateExchangeTable(exchangeRates) {
     }
 }
 
-// Gomb esemény - frissítés
+// Gomb esemény - árfolyam frissítés
 document.getElementById('refreshButton').addEventListener('click', fetchExchangeRates);
 
-updateExchangeTable(exchangeRates);
-
+// Sötét téma változtatása
+document.querySelector(".container img").addEventListener("click", (e) => {
+    const source = e.target.src.split("/").at(-1);
+    if (source === 'dark.png') {
+        e.target.src = './img/theme/light.png';
+        document.querySelector(".container").style.backgroundColor = "var(--dark)";
+        document.querySelector(".calculator").style.backgroundColor = "var(--dark)";
+        document.querySelector("body").style.backgroundColor = "var(--lighterdark)";
+        document.querySelector("p").style.color = "var(--ligth-grey)";
+    } else {
+        e.target.src = './img/theme/dark.png';
+        document.querySelector(".container").style.backgroundColor = "";
+        document.querySelector(".calculator").style.backgroundColor = "";
+        document.querySelector("body").style.backgroundColor = "";
+    }
+});
 
 // Gomb eseménykezelő a valuták cseréléséhez
 document.getElementById("change-currency-values").addEventListener("click", function() {
@@ -141,3 +157,6 @@ document.getElementById("convert-button").addEventListener("click", function() {
         popup.style.display = "none";
     });
 });
+
+// Alapértelmezett táblázat frissítése
+updateExchangeTable(exchangeRates);
