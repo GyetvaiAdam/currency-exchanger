@@ -121,4 +121,4 @@ A weboldal támogatja a Google Chrome, Firefox, Safari és Edge böngészőket.
 
 ---
 
-**Köszönjük, hogy a CashPort weboldalt használja! Ha további segítségre van szüksége, vegye fel a kapcsolatot ügyfélszolgálatunkkal. 🚀**
+**Köszönjük, hogy a CashPort weboldalt használja! Ha további segítségre van szüksége, vegye fel a kapcsolatot ügyfélszolgálatunkkal.**
