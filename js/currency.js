@@ -169,10 +169,6 @@ document.getElementById("convert-button").addEventListener("click", function() {
     `;
     popup.style.display = "flex";
 
-    // Popup bezárása
-    document.getElementById("close-popup").addEventListener("click", function() {
-        popup.style.display = "none";
-    });
 });
 
 // Alapértelmezett táblázat frissítése
