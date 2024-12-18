@@ -126,18 +126,15 @@ document.querySelector(".container img").addEventListener("click", (e) => {
 document.getElementById("change-currency-values").addEventListener("click", function() {
     const fromCurrencySelect = document.getElementById("from-currency");
     const toCurrencySelect = document.getElementById("to-currency");
-
-    const tempValue = fromCurrencySelect.value;
     fromCurrencySelect.value = toCurrencySelect.value;
-    toCurrencySelect.value = tempValue;
+    toCurrencySelect.value =  fromCurrencySelect.value;
 
     const fromLabel = document.querySelector('label[for="from-currency"]');
     const toLabel = document.querySelector('label[for="to-currency"]');
     
     if (fromLabel && toLabel) {
-        const tempText = fromLabel.textContent;
         fromLabel.textContent = toLabel.textContent;
-        toLabel.textContent = tempText;
+        toLabel.textContent =  fromLabel.textContent;
     }
 });
 
